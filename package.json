@@ -35,7 +35,7 @@
     "gatsby-remark-smartypants": "^2.2.3",
     "gatsby-source-filesystem": "^2.2.4",
     "gatsby-theme-localization": "^1.5.0",
-    "gatsby-transformer-remark": "^2.7.3",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.4.6",
     "minireset.css": "^0.0.6",
     "polished": "^3.5.2",
