@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vinicius Dias]]></title><description><![CDATA[A web-portfólio]]></description><link>https://viniciusdias.works</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 13 May 2024 13:45:02 GMT</lastBuildDate><item><title><![CDATA[Impuls-e]]></title><description><![CDATA[Description Impuls-e is a Digital Agency focused on helping our clients build their online digital presence. Solution Site developed with…]]></description><link>https://viniciusdias.works/impulse/</link><guid isPermaLink="false">https://viniciusdias.works/impulse/</guid><pubDate>Tue, 02 Jun 2020 22:12:03 GMT</pubDate><content:encoded>&lt;h3 align=&quot;center&quot;&gt;
+  Impulse Works
+&lt;/h3&gt;
+&lt;h2&gt;Description&lt;/h2&gt;
+&lt;p&gt;Impuls-e is a Digital Agency focused on helping our clients build their online digital presence.&lt;/p&gt;
+&lt;h2&gt;Solution&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://impuls-e.works/&quot;&gt;Site&lt;/a&gt; developed with the Gatsby framework.
+Below some information about the result.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;All information is based on the ** Mobile ** screen and was taken from the website&lt;a href=&quot;https://developers.google.com/speed/pagespeed/insights/&quot;&gt;PageSpeedInsights&lt;/a&gt; &gt; - By Google&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;The page score was &lt;strong&gt;83&lt;/strong&gt; points.&lt;/li&gt;
+&lt;li&gt;The time that the first content is drawn on the screen was &lt;strong&gt;1.3 s&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;The speed index was &lt;strong&gt;1.3 s&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;The time it takes the page to be completely interactive was &lt;strong&gt;5.1 s&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Weather Forecast]]></title><description><![CDATA[Development In the root directory (/weather-forecast) of the project, install all the necessary libraries for development with the command…]]></description><link>https://viniciusdias.works/weather-forecast/</link><guid isPermaLink="false">https://viniciusdias.works/weather-forecast/</guid><pubDate>Mon, 01 Jun 2020 22:12:03 GMT</pubDate><content:encoded>&lt;h3 align=&quot;center&quot;&gt;
+  Weather Forecast&lt;/strong&gt;
+&lt;/h3&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a aria-label=&quot;Node version&quot; href=&quot;https://nodejs.org/en/blog/release/v12.16.3/&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/node.js@lts-12.14.1-informational?logo=Node.JS&quot;&gt;
+  &lt;/a&gt;
+  &lt;a aria-label=&quot;React version&quot; href=&quot;https://github.com/facebook/react/blob/master/CHANGELOG.md#16131-march-19-2020&quot;&gt;
+    &lt;img src=&quot;https://img.shields.io/badge/react-16.12.0-informational?logo=react&quot;&gt;
+  &lt;/a&gt;
+  &lt;a aria-label=&quot;Typescript version&quot; href=&quot;https://www.npmjs.com/package/typescript/v/3.7.2&quot;&gt;
+    &lt;img src=&quot;https://badges.frapsoft.com/typescript/love/typescript.svg?v=101)](https://github.com/ellerbrock/typescript-badges/&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  Project Name: &lt;strong&gt;Wheater Forecast&lt;/strong&gt;
+&lt;/p&gt;
+&lt;h3&gt;Development&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;In the root directory (/weather-forecast) of the project, install all the necessary libraries for development with the command:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;  yarn install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;In the root directory (/weather-forecast) of the project, start the application in development mode at &lt;a href=&quot;http://localhost:3000&quot;&gt;localhost&lt;/a&gt; with the command:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;  yarn start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Tech Introduction&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Developed using Typescript standards within React (create-react-app);&lt;/li&gt;
+&lt;li&gt;The EsLint and Prettier libraries were used for identification and a better debugging of the code;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Basic Template&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Create the project with create-react-app;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;  create-react-app weather-forecast --template=typescript
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Added Libraries&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Added the Eslint libraty to project in development mode:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;  yarn add eslint -D
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Added the following library in the development version, to import typescript by default:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;  yarn add eslint-import-resolver-typescript -D
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Added the Prettier library to the project in development mode:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;  yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Added the Styled Components library to stylized the aplication:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;  yarn add styled-components
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Added the Axios library to HTTP request&apos;s:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;  yarn add axios
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Added the React Icons library to use some icons:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;  yarn add react-icons
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Project Structure&lt;/h4&gt;
+&lt;p&gt;The project contains the following folders&lt;/p&gt;
+&lt;p&gt;./src&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/components =&gt; Reusable application components;&lt;/li&gt;
+&lt;li&gt;/pages =&gt; Application pages;&lt;/li&gt;
+&lt;li&gt;/routes =&gt; Application routes;&lt;/li&gt;
+&lt;li&gt;/styles =&gt; Global styles of aplication;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Some comments have been added to the code to improve understanding;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Airbnb Replicate]]></title><description><![CDATA[This is one of the projects developed in Gama Experience, the Bootcamp of GamaAcademy. In this project my challenge is: Create a page…]]></description><link>https://viniciusdias.works/airbnb/</link><guid isPermaLink="false">https://viniciusdias.works/airbnb/</guid><pubDate>Sun, 10 May 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is one of the projects developed in &lt;a href=&quot;https://gama.academy/experience/&quot;&gt;Gama Experience&lt;/a&gt;, the Bootcamp of &lt;a href=&quot;https://gama.academy&quot;&gt;GamaAcademy&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this project my challenge is: Create a page similar to Airbnb using the API of rooms, from this database &lt;a href=&quot;https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Requirements&lt;/h2&gt;
+&lt;p&gt;Screen with cards containing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Image&lt;/li&gt;
+&lt;li&gt;Property type&lt;/li&gt;
+&lt;li&gt;Price&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Repository link on Github:
+&lt;a href=&quot;https://github.com/ViniciusmDias/airbnb-gamaacademy&quot;&gt;airbnb-replicate&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Github Explorer]]></title><description><![CDATA[This is one of the projects developed in Go Stack, the Bootcamp of Rocketseat. In this project I create an application that makes a request…]]></description><link>https://viniciusdias.works/github-explorer/</link><guid isPermaLink="false">https://viniciusdias.works/github-explorer/</guid><pubDate>Tue, 28 Apr 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is one of the projects developed in &lt;a href=&quot;https://rocketseat.com.br/gostack&quot;&gt;Go Stack&lt;/a&gt;, the Bootcamp of &lt;a href=&quot;https://rocketseat.com.br&quot;&gt;Rocketseat&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this project I create an application that makes a request for the Github API and shows the searched repositories.&lt;/p&gt;
+&lt;h2&gt;Requirements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Use Typescript;&lt;/li&gt;
+&lt;li&gt;Use Styled-Components;&lt;/li&gt;
+&lt;li&gt;Replicate Layout;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Repository link on Github:
+&lt;a href=&quot;https://covidbreakingnews.netlify.app/&quot;&gt;covidnews&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Covid News]]></title><description><![CDATA[This is my first project in Gama Experience, the Bootcamp of GamaAcademy. In this project I create a landing page using only HTML and CSS…]]></description><link>https://viniciusdias.works/covid-news/</link><guid isPermaLink="false">https://viniciusdias.works/covid-news/</guid><pubDate>Wed, 15 Apr 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first project in &lt;a href=&quot;https://gama.academy/experience/&quot;&gt;Gama Experience&lt;/a&gt;, the Bootcamp of GamaAcademy.&lt;/p&gt;
+&lt;p&gt;In this project I create a landing page using only HTML and CSS with 6 news about COVID-19.&lt;/p&gt;
+&lt;h2&gt;Requirements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Only have separate HTML and CSS files;&lt;/li&gt;
+&lt;li&gt;Have the following pages: Home, About, Contact and Learn more&lt;/li&gt;
+&lt;li&gt;Have at least one type of news item: audio, video and text;&lt;/li&gt;
+&lt;li&gt;Be hard coded (your own code, without using Bootstrap and drag-and-drop tools like Wix);&lt;/li&gt;
+&lt;li&gt;Be in a repository on GitHub.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Repository link on Github:
+&lt;a href=&quot;https://covidbreakingnews.netlify.app/&quot;&gt;covidnews&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Booststrap Translation]]></title><description><![CDATA[This translation is my first open-source project. In this project I was translating the pages while I was learning about the framework…]]></description><link>https://viniciusdias.works/bootstrap/</link><guid isPermaLink="false">https://viniciusdias.works/bootstrap/</guid><pubDate>Sun, 15 Apr 2018 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This translation is my first open-source project.&lt;/p&gt;
+&lt;p&gt;In this project I was translating the pages while I was learning about the framework.&lt;/p&gt;
+&lt;p&gt;Repository link on Github:
+&lt;a href=&quot;https://github.com/bootstrapbrasil/bootstrap&quot;&gt;covidnews&lt;/a&gt;.&lt;/p&gt;</content:encoded></item></channel></rss>
