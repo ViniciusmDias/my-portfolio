@@ -5,8 +5,6 @@ import { SocialProfileJsonLd } from "gatsby-plugin-next-seo"
 import Post from "../posts"
 
 export default function Intro() {
-
-
 	return (
 		<>
 			<SocialProfileJsonLd
@@ -21,7 +19,7 @@ export default function Intro() {
 				]}
 			/>
 			<div className="container intro">
-				<h1>I'm a very curious guy.</h1>
+				<h1>I'm a software engineer.</h1>
 				<div className="background" />
 				<div className="description">
 					<Post />
