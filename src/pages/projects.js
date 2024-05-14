@@ -73,7 +73,7 @@ const BlogIndex = ({ data }) => {
 				</section>
 			</div>
 
-			<Button title="carrer" />
+			<Button title="experiences" />
 		</Layout>
 	)
 }

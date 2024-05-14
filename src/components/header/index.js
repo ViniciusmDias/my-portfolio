@@ -55,8 +55,8 @@ export default function Header() {
 							</Link>
 						</li>
 						<li>
-							<Link title="Go to experiences page" to="/carrer">
-								Carrer
+							<Link title="Go to experiences page" to="/experiences">
+								Experiences
 							</Link>
 						</li>
 						<li>
@@ -112,7 +112,7 @@ export default function Header() {
 						<Link title="Go to case studies page" to="/projects">
 							Projects
 						</Link>
-						<Link title="Go to experience page" to="/carrer">
+						<Link title="Go to experience page" to="/experiences">
 							Experience
 						</Link>
 						<a
