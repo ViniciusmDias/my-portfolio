@@ -18,6 +18,7 @@ module.exports = {
 		twitterUsername: "@vinimdias10",
 		image: `${__dirname}/src/img/profile.jpeg`, // Path to your image you placed in the 'static' folder
 	},
+	pathPrefix: "/",
 	plugins: [
 		{
 			resolve: `gatsby-source-filesystem`,
@@ -26,7 +27,6 @@ module.exports = {
 				path: `${__dirname}/src/images`,
 			},
 		},
-
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -63,6 +63,7 @@ module.exports = {
 		`gatsby-plugin-next-seo`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
+		`gatsby-plugin-sitemap`,
 		{
 			resolve: `gatsby-plugin-google-analytics`,
 			options: {
