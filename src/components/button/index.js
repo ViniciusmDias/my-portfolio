@@ -3,12 +3,11 @@ import "./styles.css"
 import { FaArrowRight } from "react-icons/fa"
 import { Link } from "gatsby"
 
-export default function Button({ title }) {
-	const route = title.split(" ")
+export default function Button({ title, route }) {
 
 	return (
 		<>
-			<Link className="button" title={`Go to ${title}`} to={`/${route[0]}`}>
+			<Link className="button" title={`Go to ${title}`} to={`/${route}`}>
 				{title}
 				<FaArrowRight />
 			</Link>

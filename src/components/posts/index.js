@@ -3,6 +3,7 @@ import { FiChevronRight } from "react-icons/fi"
 import { apiDev } from "../../services/api"
 
 import { Title, Posts } from "./styles"
+import Button from "../button"
 /*
 interface PostProps {
 	id: Number;
@@ -22,9 +23,6 @@ const Post = () => {
 			setPosts(response.data)
 		})
 	}, [])
-
-	console.log(posts)
-
 	return (
 		<>
 			<Title>Lastest posts</Title>
@@ -44,6 +42,7 @@ const Post = () => {
 					</a>
 				))}
 			</Posts>
+			<Button title="Let's talk!" route="contact"/>
 		</>
 	)
 }

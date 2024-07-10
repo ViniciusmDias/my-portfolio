@@ -13,16 +13,23 @@
 		margin: 0.5rem 0;
 	}
 
+	form {
+		max-width: 700px;
+		margin-bottom: 0;
+	}
+
 	label {
 		display: flex;
 		flex-direction: column;
 		margin: 0 0.5rem 0 0;
+		width: 100%;
+		font-size: medium;
 
 		input {
-			padding: 0.25rem 0.5rem;
+			padding: 0.125rem 0.25rem;
 		}
 		textarea {
-			padding: 0.25rem 0.5rem;
+			padding: 0.125rem 0.25rem;
 		}
 	}
 
@@ -72,12 +79,13 @@
 	border-radius: 6px;
 	display: flex;
 	-moz-box-pack: justify;
-	justify-content: space-between;
+	justify-content: center;
 	padding: 12px 16px;
 	width: 100%;
 	max-width: 240px;
 	align-self: center;
 }
+
 .contact .social-icons a {
 	-moz-box-align: center;
 	align-items: center;

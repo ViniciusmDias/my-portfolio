@@ -30,7 +30,7 @@ export default function Intro() {
 					<p>Currently, I am enhancing my frontend skills through courses on Frontend Masters and developing personal projects with the aim of making them profitable. I am also taking private English lessons to improve my conversational skills for global opportunities. I am available for roles that align with my expertise and growth areas. If my profile interests you, please contact me!
 					</p>					
 					{/* <Post /> */}
-					<Button title="Let's talk!" />
+					<Button title="Let's talk!" route="contact" />
 				</div>
 			</div>
 		</>

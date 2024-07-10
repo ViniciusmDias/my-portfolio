@@ -1,12 +1,19 @@
-import React, { useRef } from 'react';
-import { FaGithub, FaLinkedin } from "react-icons/fa"
+import React from 'react';
 import "./styles.css"
 
 export default function Contact() {
 	
 	return (
 		<div className="container contact">
-			<h1>Contact</h1>
+			<h1
+			className="contact-info"
+			data-sal="slide-up"
+			data-sal-delay="200"
+			data-sal-easing="ease"
+			data-sal-duration="1000"
+			>
+				Let's talk!
+			</h1>
 
 			<form
 				id="form"
@@ -17,20 +24,9 @@ export default function Contact() {
 				netlify
 			>
 				<input type="hidden" name="form-name" value="contact" />
-
-			
-				<h3
-					className="contact-info"
-					data-sal="slide-up"
-					data-sal-delay="200"
-					data-sal-easing="ease"
-					data-sal-duration="1000"
-				>
-					Let's talk!
-				</h3>
 				<div className="row">
 					<label>
-						Name (required)
+						Name
 						<input
 							type="text"
 							name="name"
@@ -40,7 +36,7 @@ export default function Contact() {
 						/>
 					</label>
 					<label>
-						E-mail (required)
+						E-mail
 						<input
 							type="email"
 							name="email"
@@ -51,29 +47,23 @@ export default function Contact() {
 					</label>
 				</div>
 				<div className="row">
-				<label>Your Role: 
-					<select name="role[]">
-					<option value="leader">Leader</option>
-					<option value="follower">Follower</option>
-				</select>
-				</label>
 					<label>
-						Cellphone (opcional)
+						Phone
 						<input
 							type="text"
 							name="phone"
 							id="phone"
-							placeholder="Write your cellphone number"
+							placeholder="Write your phone number"
 						/>
 					</label>
 				</div>
 				<div className="row">
 					<label>
-						Message (required)
+						Message
 						<textarea
 							name="message"
 							id="message"
-							rows="5"
+							rows="4"
 							placeholder="Write your message"
 						/>
 					</label>
@@ -81,15 +71,6 @@ export default function Contact() {
 
 				<button type="submit">Send</button>
 			</form>
-
-			<div className="social-icons">
-				<a href="https://github.com/ViniciusmDias">
-					<FaGithub />
-				</a>
-				<a href="https://www.linkedin.com/in/vinicius-m-dias/">
-					<FaLinkedin />
-				</a>
-			</div>
 		</div>
 	)
 }
