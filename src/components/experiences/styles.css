@@ -19,8 +19,9 @@
 .experiences h1 {
 	width: 100%;
 }
-.experiences h2 {
-	margin: 8vh 0 2vh;
+.experiences p {
+	font-size: medium;
+	margin: 4vh 0 2vh;
 }
 .experiences .social-icons {
 	background-color: rgb(255, 255, 255);

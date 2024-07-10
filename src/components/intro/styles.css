@@ -8,13 +8,14 @@
 .intro .background {
 	align-self: flex-start;
 	position: absolute;
-	width: 85%;
-	height: 70%;
+	width: 30%;
+  height: 35%;
 	max-height: 360px;
 	background-position: bottom;
 	background-size: cover;
-	background-image: linear-gradient(to bottom, #fff 10%, #fd7e1512),
-		url("../../images/vinidois.jpg");
+	background-image:
+		url("../../images/vinidias.jpeg");
+	z-index: -1;
 }
 @keyframes intro {
 	0% {
@@ -36,7 +37,7 @@
 	padding: 0 1vw;
 	max-width: 20ch;
 	z-index: 2;
-	align-self: center;
+	align-self: flex-end;
 }
 .intro .description {
 	display: flex;
@@ -44,11 +45,20 @@
 	align-self: center;
 	margin-top: 30vh;
 }
-.intro h3 {
+.intro h2 {
+	font-weight: bold;
+	letter-spacing: 0px;
+	margin: 0.5rem 0 0.25rem;
+
+}
+
+.intro p {
 	font-weight: 400;
 	letter-spacing: 0px;
+	font-size: medium;
+	text-indent: 0.5rem;
 }
-@media (min-width: 970px) {
+@media (min-width: 680px) {
 	.intro {
 		flex-wrap: wrap;
 		flex-direction: row;
@@ -58,25 +68,29 @@
 	}
 
 	.intro .background {
-		width: 35vw;
+		width: 35vw;	
 		height: 40vw;
-		margin-top: 10vh;
+		margin-top: 22vh;
 		position: relative;
-		max-height: 600px;
+		max-height: 100%;
 	}
 	.intro .description {
 		width: 45%;
-		margin-top: 12vh;
 		align-self: flex-end;
+		margin-top: 15vh;
 	}
 	.intro h1 {
 		font-size: 3rem;
 		text-align: left;
 		line-height: 55px;
 		align-self: center;
-		margin: 7vh 10vw;
+		margin: 2vh 10vw;
 		position: absolute;
 		top: 0;
 		-webkit-margin-before: 180px !important;
+	}
+
+	.intro h2 {
+		font-size: larger;
 	}
 }

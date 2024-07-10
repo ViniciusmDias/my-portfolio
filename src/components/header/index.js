@@ -45,16 +45,6 @@ export default function Header() {
 					</Link>
 					<ul className="menu">
 						<li>
-							<Link title="Go to home page" to="/">
-								Home
-							</Link>
-						</li>
-						<li>
-							<Link title="Go to case studies page" to="/projects">
-								Projects
-							</Link>
-						</li>
-						<li>
 							<Link title="Go to experiences page" to="/experiences">
 								Experiences
 							</Link>
@@ -64,11 +54,16 @@ export default function Header() {
 								Resume
 							</Link>
 						</li>
-						{/* <li>
+						<li>
+							<Link title="Go to case article page" to="/blog">
+								Blog
+							</Link>
+						</li>
+						<li>
 							<Link title="Go to contact page" to="/contact">
 								Contact
 							</Link>
-						</li> */}
+						</li>
 					</ul>
 					<div className="social-icons">
 						<a
@@ -82,12 +77,6 @@ export default function Header() {
 							href="https://www.linkedin.com/in/vinicius-m-dias/"
 						>
 							<FaLinkedin />
-						</a>
-						<a
-							title="Go to vinicius dias instagram"
-							href="https://www.instagram.com/diasvini10/"
-						>
-							<FaInstagram />
 						</a>
 					</div>
 					<button onClick={handleClick} className={`icon ${clickStyle}`}>
@@ -106,21 +95,18 @@ export default function Header() {
 				</div>
 				<div className={`aside ${clickStyle}`}>
 					<div className="aside-menu">
-						<Link title="Go to homepage" to="/">
-							Home
-						</Link>
-						<Link title="Go to case studies page" to="/projects">
-							Projects
-						</Link>
 						<Link title="Go to experience page" to="/experiences">
 							Experience
 						</Link>
-						<a
-							title="Go to resume page"
-							href="https://pdfhost.io/v/msVERCoH8_ResumeENpdf.pdf"
-						>
+						<Link title="Go to resume page" to="/resume">
 							Resume
-						</a>
+						</Link>
+						<Link title="Go to my articles page" to="/blog">
+							Blog
+						</Link>
+						<Link title="Go to contact page" to="/contact">
+							Contact
+						</Link>
 					</div>
 					<div className="social-icons">
 						<a
@@ -134,12 +120,6 @@ export default function Header() {
 							href="https://www.linkedin.com/in/vinicius-m-dias/"
 						>
 							<FaLinkedin />
-						</a>
-						<a
-							title="Go to vinicius dias instagram"
-							href="https://www.instagram.com/diasvini10/"
-						>
-							<FaInstagram />
 						</a>
 					</div>
 				</div>

@@ -31,10 +31,6 @@ export default function Experience() {
 	return (
 		<section
 			className="content"
-			data-sal="slide-up"
-			data-sal-delay="200"
-			data-sal-easing="ease"
-			data-sal-duration="1000"
 		>
 			<div className="experience">
 				{experiences.map(experience => (

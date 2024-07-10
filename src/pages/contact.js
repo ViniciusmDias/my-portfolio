@@ -6,13 +6,13 @@ import Header from "../components/header"
 
 import Contact from "../components/contact"
 
-const ResumePage = () => (
+const ContactPage = () => (
 	<Layout>
-		{/* <SEO title="My contact" description="Contact me" />
+		<SEO title="My contact" description="Contact me" />
 		<Header />
 
-		<Contact /> */}
+		<Contact />
 	</Layout>
 )
 
-export default ResumePage
+export default ContactPage

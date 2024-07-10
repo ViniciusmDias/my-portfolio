@@ -3,17 +3,7 @@ import { shade } from "polished"
 
 export const Title = styled.h3`
 	text-align: center;
-	margin: 6vh 0 2vh;
-
-
-	@media(min-width: 670px) {
-		margin: 10vh 0 2vh ;
-
-	}
-	@media(min-width: 970px) {
-		margin: 12vh 0 2vh ;
-
-	}
+	margin: 4vh 0 2vh;
 `
 export const Posts = styled.div`
 	width: 100%;

@@ -13,7 +13,7 @@ import Img from "gatsby-image"
 
 import "./projects.css"
 
-const BlogIndex = ({ data }) => {
+const ProjectsPage = ({ data }) => {
 	const posts = data.allMarkdownRemark.edges
 
 	return (
@@ -78,7 +78,7 @@ const BlogIndex = ({ data }) => {
 	)
 }
 
-export default BlogIndex
+export default ProjectsPage
 
 export const pageQuery = graphql`
 	query {

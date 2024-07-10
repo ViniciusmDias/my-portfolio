@@ -1,7 +1,9 @@
-import React from "react"
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa"
+import React, { useRef } from 'react';
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 import "./styles.css"
-export default function Resume() {
+
+export default function Contact() {
+	
 	return (
 		<div className="container contact">
 			<h1>Contact</h1>
@@ -12,14 +14,11 @@ export default function Resume() {
 				method="post"
 				data-netlify="true"
 				data-netlify-honeypot="bot-field"
+				netlify
 			>
 				<input type="hidden" name="form-name" value="contact" />
 
-				<div hidden>
-					<label>
-						Don’t fill this out: <input name="bot-field" />
-					</label>
-				</div>
+			
 				<h3
 					className="contact-info"
 					data-sal="slide-up"
@@ -27,63 +26,60 @@ export default function Resume() {
 					data-sal-easing="ease"
 					data-sal-duration="1000"
 				>
-					Envie-nos uma mensagem.
+					Let's talk!
 				</h3>
 				<div className="row">
 					<label>
-						Endereço de e-mail (obrigatório)
-						<input
-							type="email"
-							name="email"
-							id="email"
-							placeholder="Coloque seu e-mail"
-							required
-						/>
-					</label>
-					<label>
-						Seu Nome (obrigatório)
+						Name (required)
 						<input
 							type="text"
 							name="name"
-							placeholder="Coloque seu nome"
+							placeholder="Write your name"
 							id="name"
 							required
 						/>
 					</label>
-				</div>
-				<div className="row">
 					<label>
-						Tecnologias (opcional)
+						E-mail (required)
 						<input
-							type="techs"
-							name="techs"
-							id="techs"
-							placeholder="Digite aqui as tecnologias"
+							type="email"
+							name="email"
+							id="email"
+							placeholder="Write your email"
+							required
 						/>
 					</label>
+				</div>
+				<div className="row">
+				<label>Your Role: 
+					<select name="role[]">
+					<option value="leader">Leader</option>
+					<option value="follower">Follower</option>
+				</select>
+				</label>
 					<label>
-						Telefone (opcional)
+						Cellphone (opcional)
 						<input
 							type="text"
 							name="phone"
 							id="phone"
-							placeholder="Digite seu telefone"
+							placeholder="Write your cellphone number"
 						/>
 					</label>
 				</div>
 				<div className="row">
 					<label>
-						Mensagem (obrigatório)
+						Message (required)
 						<textarea
 							name="message"
 							id="message"
 							rows="5"
-							placeholder="Coloque aqui a sua necessidade"
+							placeholder="Write your message"
 						/>
 					</label>
 				</div>
 
-				<button type="submit">Enviar</button>
+				<button type="submit">Send</button>
 			</form>
 
 			<div className="social-icons">
@@ -92,9 +88,6 @@ export default function Resume() {
 				</a>
 				<a href="https://www.linkedin.com/in/vinicius-m-dias/">
 					<FaLinkedin />
-				</a>
-				<a href="https://www.instagram.com/diasvini10/">
-					<FaInstagram />
 				</a>
 			</div>
 		</div>
