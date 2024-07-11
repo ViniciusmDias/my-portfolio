@@ -18,6 +18,9 @@
 	src: url("../../fonts/Rubik-Bold.ttf");
 }
 
+html {
+	overflow: hidden;
+}
 html,
 body {
 	box-sizing: border-box;
@@ -73,23 +76,22 @@ iframe {
 }
 body {
 	overflow-x: hidden;
+	height: 100vh;
+	background-color: #F3F3E9;
 }
 .layout {
-	flex: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-color: var(--bg-color);
+	background-color: #F3F3E9;
 	padding: 0px 4vw;
-}
-.layout canvas {
-	position: fixed;
 }
 .layout h1,
 h2,
 h3,
 h4,
 p {
+	line-height: 2rem;
 	color: var(--near-black);
 }
 .layout h1 {
@@ -99,7 +101,7 @@ p {
 }
 
 .layout h2 {
-	font-size: 1.2rem;
+	font-size: 1rem;
 	font-weight: lighter;
 	letter-spacing: -0.5px;
 }
@@ -124,10 +126,18 @@ a {
 	box-shadow: none;
 }
 
-@media (min-width: 970px) {
+@media (min-width: 1000px) {
 	html,
 	body {
-		font-size: 20px;
+		font-size: 17px;
+	}
+
+}
+
+@media (min-width: 1200px) {
+	html,
+	body {
+		font-size: 18px;
 	}
 
 	.layout {

@@ -19,7 +19,6 @@
 	flex: 1 1 auto;
 	align-items: flex-start;
 	width: 100%;
-	background-color: var(--bg-color);
 	border-radius: 0 0 10px 10px;
 }
 .experience .info-item .title {

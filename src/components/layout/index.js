@@ -10,11 +10,16 @@ import PropTypes from "prop-types"
 
 import "./styles.css"
 import "minireset.css"
+import Header from "../header"
 
 export default function Layout({ children }) {
 	Layout.propTypes = {
 		children: PropTypes.node.isRequired,
 	}
 
-	return <main className="layout">{children}</main>
+	return (
+	<main className="layout">
+		<Header />
+		{children}
+	</main>)
 }

@@ -9,8 +9,6 @@ import Experiences from "../components/experiences"
 const ExperiencesPage = () => (
 	<Layout>
 		<SEO title="My Experiences" description="All about my carrer." />
-		<Header />
-
 		<Experiences />
 	</Layout>
 )

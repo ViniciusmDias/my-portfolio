@@ -12,8 +12,6 @@ const IndexPage = () => (
 			title="Frontend Developer"
 			description="I'm live in Florianópolis and actually builds WebSites, E-Commerces and LandingPages."
 		/>
-		<Header />
-
 		<Intro />
 	</Layout>
 )

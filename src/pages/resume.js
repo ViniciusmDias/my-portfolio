@@ -9,8 +9,6 @@ import Resume from "../components/resume"
 const ResumePage = () => (
 	<Layout>
 		<SEO title="My resume" description="All about me." />
-		<Header />
-
 		<Resume />
 	</Layout>
 )

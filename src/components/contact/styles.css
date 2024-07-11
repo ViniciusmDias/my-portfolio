@@ -4,7 +4,6 @@
 	flex-direction: column;
 	margin: 0px auto;
 	width: 100%;
-	background-color: var(--bg-color);
 	opacity: 0;
 	min-height: 80vh;
 

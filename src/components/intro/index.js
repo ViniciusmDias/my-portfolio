@@ -2,7 +2,14 @@ import React from "react"
 import "./styles.css"
 import Button from "../button"
 import { SocialProfileJsonLd } from "gatsby-plugin-next-seo"
-import Post from "../posts"
+import profileImage from "../../images/vinigoogle.jpg"
+import nextLogo from "../../images/next.svg"
+import reactLogo from "../../images/react.svg"
+import nodeLogo from "../../images/node.svg"
+import awsLogo from "../../images/aws.svg"
+import javascript from "../../images/javascript.svg"
+import gatsbyLogo from "../../images/gatsby.svg"
+
 
 export default function Intro() {
 	return (
@@ -19,17 +26,26 @@ export default function Intro() {
 				]}
 			/>
 			<div className="container intro">
-				<h1>I'm a software engineer.</h1>
-				<div className="background" />
+				<div className="background">
+					<img src={profileImage} alt="Profile image" />
+				</div>
 				<div className="description">
-					<h2>About me</h2>
-					<p>I am a software developer with <strong>5 years of experience</strong>, primarily focused on <strong>frontend</strong> applications. My main programming skill is <strong>JavaScript</strong>, and I have extensive experience with technologies such as <strong>Next.js, React.js, TypeScript, Node.js, Gatsby.js, and React-Native</strong>. Recently, I worked in a DevOps role for 8 months, gaining cloud skills in <strong>AWS, Kubernetes, Lambda, ECS, EC2, and CI/CD, and maintaining a healthy production environment </strong>.
-					</p>
-					
-					<h2>I'm interested in</h2>
-					<p>Currently, I am enhancing my frontend skills through courses on Frontend Masters and developing personal projects with the aim of making them profitable. I am also taking private English lessons to improve my conversational skills for global opportunities. I am available for roles that align with my expertise and growth areas. If my profile interests you, please contact me!
-					</p>					
-					{/* <Post /> */}
+					<h1>I'm a software 
+						engineer with +5 
+						years of experience
+					</h1>
+
+					<h2> 
+						I'm primarily focused on frontend applications. My main programming skill is JavaScript, and I have extensive experience with technologies such as:
+					</h2>
+					<div className="techLogos">
+						<img src={nextLogo} alt="Next image" />
+						<img src={reactLogo} alt="Next image" />
+						<img src={nodeLogo} alt="Next image" />
+						<img src={awsLogo} alt="Next image" />
+						<img src={javascript} alt="Next image" />
+						<img src={gatsbyLogo} alt="Next image" />
+					</div>
 					<Button title="Let's talk!" route="contact" />
 				</div>
 			</div>

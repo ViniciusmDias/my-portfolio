@@ -9,8 +9,6 @@ import Contact from "../components/contact"
 const ContactPage = () => (
 	<Layout>
 		<SEO title="My contact" description="Contact me" />
-		<Header />
-
 		<Contact />
 	</Layout>
 )

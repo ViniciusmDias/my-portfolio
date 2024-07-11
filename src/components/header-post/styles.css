@@ -1,16 +1,12 @@
 header {
 	display: flex;
-	padding-top: 2rem;
-	padding-bottom: 1rem;
 	height: 87px;
-	background-color: #fff;
 }
 header .wrapper {
 	display: flex;
 	align-items: center;
 	flex-direction: row;
 	width: 100%;
-	background-color: #fff;
 	transition: background-color 0.1s ease-out, transform 0.8s ease-out;
 	z-index: 2;
 	transition: transform 600ms ease 0s;

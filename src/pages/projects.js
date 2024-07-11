@@ -19,7 +19,6 @@ const ProjectsPage = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title="Projects" description="All projects in my carrer." />
-			<Header />
 			<div className="container works">
 				<hr />
 				<h1>Projects</h1>
