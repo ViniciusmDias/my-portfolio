@@ -39,12 +39,12 @@ export default function Intro() {
 						I'm primarily focused on frontend applications. My main programming skill is JavaScript, and I have extensive experience with technologies such as:
 					</h2>
 					<div className="techLogos">
-						<img src={nextLogo} alt="Next image" />
+						<img src={nextLogo} alt="Next image"  />
+						<img src={awsLogo} alt="Next image" style={{ alignSelf: "flex-end"}} />
 						<img src={reactLogo} alt="Next image" />
 						<img src={nodeLogo} alt="Next image" />
-						<img src={awsLogo} alt="Next image" />
-						<img src={javascript} alt="Next image" />
 						<img src={gatsbyLogo} alt="Next image" />
+						<img src={javascript} alt="Next image" />
 					</div>
 					<Button title="Let's talk!" route="contact" />
 				</div>

@@ -45,13 +45,13 @@ export default function Header() {
 					</Link>
 					<ul className="menu">
 						<li>
-							<Link title="Go to experiences page" to="/experiences">
-								Experiences
+							<Link title="Go to about me page" to="/about">
+								About me
 							</Link>
 						</li>
 						<li>
-							<Link title="Go to resume page" to="/resume">
-								Resume
+							<Link title="Go to experiences page" to="/experiences">
+								Experiences
 							</Link>
 						</li>
 						<li>
@@ -95,11 +95,11 @@ export default function Header() {
 				</div>
 				<div className={`aside ${clickStyle}`}>
 					<div className="aside-menu">
-						<Link title="Go to experience page" to="/experiences">
-							Experience
+						<Link title="Go to about page" to="/about">
+							About me
 						</Link>
-						<Link title="Go to resume page" to="/resume">
-							Resume
+						<Link title="Go to experience page" to="/experiences">
+							Experiences
 						</Link>
 						<Link title="Go to my articles page" to="/blog">
 							Blog
