@@ -18,7 +18,16 @@
 
 .about .row {
 	display: flex;
+	flex-wrap: wrap;
 	margin: 2rem 0;
+
+	@media(min-width: 650px) {
+		flex-wrap: nowrap;
+
+		.image {
+			min-width: 30%;
+		}
+	}
 }
 
 .about .row.reverse {
@@ -43,7 +52,7 @@
 .about .row .image {
 	display: flex;
 	flex-direction: column;
-	min-width: 30%;
+	width: 100%;
 
 	img {
 		height: 100%;
@@ -51,6 +60,10 @@
 		margin:	 1rem;
 		object-fit: cover;
 		border-radius: 20px;
+
+		@media(min-width: 1600px) {
+			max-height: 400px;
+		}
 	}
 }
 
@@ -59,7 +72,6 @@
 	font-size: 2.3rem;
 }
 .about p {
-	font-size: medium;
 	margin: 4vh 0 2vh;
 }
 .about .social-icons {

@@ -82,10 +82,11 @@ body {
 .layout {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	background-color: #F3F3E9;
 	padding: 0px 4vw;
+	height: 100vh;
 }
+
 .layout h1,
 h2,
 h3,
@@ -121,6 +122,10 @@ p {
 	letter-spacing: 0.5px;
 }
 
+.container {
+	height: 88vh;
+}
+
 a {
 	text-decoration: none;
 	box-shadow: none;
@@ -142,5 +147,12 @@ a {
 
 	.layout {
 		padding: 0 10vw;
+	}
+}
+
+@media(min-width: 1600px) {
+	html,
+	body {
+		font-size: 25px;
 	}
 }

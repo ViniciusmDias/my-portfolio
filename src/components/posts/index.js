@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { FiChevronRight } from "react-icons/fi"
 import { apiDev } from "../../services/api"
 
-import { Title, Posts } from "./styles"
+import { Container, Posts } from "./styles"
 import Button from "../button"
 /*
 interface PostProps {
@@ -23,9 +23,10 @@ const Post = () => {
 			setPosts(response.data)
 		})
 	}, [])
+
 	return (
-		<>
-			<Title>Lastest posts</Title>
+		<Container className="container">
+			<h1>Latest posts</h1>
 			<Posts>
 				{posts.map(post => (
 					<a key={post.id} href={`${post.url}`}>
@@ -34,7 +35,7 @@ const Post = () => {
 							<strong>{post.title}</strong>
 							<p>{post.description}</p>
 						</section>
-						<div>
+						<div className="more">
 							<span>Read More</span>
 
 							<FiChevronRight size={20} />
@@ -43,7 +44,7 @@ const Post = () => {
 				))}
 			</Posts>
 			<Button title="Let's talk!" route="contact"/>
-		</>
+		</Container>
 	)
 }
 export default Post

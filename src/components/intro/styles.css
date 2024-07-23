@@ -1,23 +1,40 @@
 .intro {
 	animation: 600ms ease 600ms 1 normal forwards running intro;
 	display: flex;
-	flex-direction: column-reverse;
+	flex-direction: column;
 	opacity: 0;
 	width: 100%;
 	padding-top: 1rem;
+	height: 88vh;
+	align-items: center;
 
-	a {
-		align-self: flex-start;
+	@media(min-width: 440px){ 
+		a {
+			align-self: flex-start;
+		}
 	}
+}
+.intro .background {
+	width: 100%; 
 }
 .intro .background {
 	img {
 		width: 100%;
 		max-width: 400px;
-		max-height: 456px;
+		max-height: 406px;
 		object-fit: cover;
 		border-radius: 20px;
 		margin: 0;
+
+		@media(min-width: 450px) {
+			max-width: 350px;
+			max-height: 406px;
+		}
+
+		@media(min-width: 1030px) {
+			max-width: 450px;
+			max-height: 506px;
+		}
 	}
 }
 
@@ -69,14 +86,14 @@
 	font-size: medium;
 	text-indent: 0.5rem;
 }
-@media (min-width: 760px) {
+@media (min-width: 1030px) {
 	.intro {
 		flex-direction: row;
 		justify-content: space-between;
 	}
 
 	.intro .background {
-		width: 40%;
+		 width: 40%; 
 	}
 	.intro .description {
 		width: 58%;

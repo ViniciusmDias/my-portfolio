@@ -31,7 +31,7 @@ export default function Intro() {
 				</div>
 				<div className="description">
 					<h1>I'm a software 
-						engineer with +5 
+						engineer with +4 
 						years of experience
 					</h1>
 

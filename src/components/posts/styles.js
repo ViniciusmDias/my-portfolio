@@ -5,8 +5,19 @@ export const Title = styled.h3`
 	text-align: center;
 	margin: 4vh 0 2vh;
 `
+
+export const Container = styled.div`
+	animation: 600ms ease 600ms 1 normal forwards running fade;
+	display: flex;
+	flex-direction: column;
+	margin: 0px auto;
+	width: 100%;
+	opacity: 0;
+	padding-top: 1rem;
+`
 export const Posts = styled.div`
 	width: 100%;
+	margin-top: 1rem;
 
 	a {
 		border-radius: 5px;
@@ -33,41 +44,37 @@ export const Posts = styled.div`
 		}
 
 		p {
-			font-size: 0.7rem;
 			color: #999;
 			margin-top: 4px;
 		}
-		span {
-				font-size: 0.7rem;
-			}
 		section {
 			display: flex;
 			flex-direction: column;
 			min-width: 250px;
-			margin: 0 1rem;
 			flex: 1;
 			justify-content: center;
 			align-items: flex-start;
 
 			strong {
-				font-size: 0.8rem;
 				color: var(--near-black);
 			}
 		}
 
-		div {
+		.more {
 			display: flex;
 			margin: 0.5rem 1rem;
 			align-self: flex-start;
+			align-items: center;
 
 			span {
-				font-size: 0.6rem;
-				color: #a8a8b3;
+				color: var(--orange);
+				font-weight: bold
 			}
 		}
 		svg {
 			margin-left: auto;
-			color: #cbcbd6;
+			color: var(--orange);
+			font-size: 2rem;
 		}
 	}
 `

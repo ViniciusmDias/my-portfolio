@@ -5,6 +5,9 @@
 	margin: 0px auto;
 	width: 100%;
 	opacity: 0;
+	padding-top: 1rem;
+
+
 }
 @keyframes fade {
 	0% {
@@ -20,7 +23,7 @@
 }
 .experiences p {
 	font-size: medium;
-	margin: 4vh 0 2vh;
+	margin: 0 0 2vh;
 }
 .experiences .social-icons {
 	background-color: rgb(255, 255, 255);
