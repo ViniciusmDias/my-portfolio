@@ -13,27 +13,28 @@
 			align-self: flex-start;
 		}
 	}
-}
-.intro .background {
-	width: 100%; 
-}
-.intro .background {
-	img {
-		width: 100%;
-		max-width: 400px;
-		max-height: 406px;
-		object-fit: cover;
-		border-radius: 20px;
-		margin: 0;
 
-		@media(min-width: 450px) {
-			max-width: 350px;
+	.background {
+		width: 100%; 
+
+		img {
+			width: 100%;
+			max-width: 400px;
 			max-height: 406px;
-		}
+			object-fit: cover;
+			border-radius: 20px;
+			margin: 0;
 
-		@media(min-width: 1030px) {
-			max-width: 450px;
-			max-height: 506px;
+
+			@media(min-width: 450px) {
+				max-width: 350px;
+				max-height: 406px;
+			}
+	
+			@media(min-width: 1030px) {
+				max-width: 450px;
+				max-height: 506px;
+			}
 		}
 	}
 }
