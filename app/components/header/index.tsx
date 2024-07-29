@@ -57,7 +57,7 @@ export default function Header() {
 					</a>
 					<a
 						title="Go to vinicius dias linkedin"
-						href="https://www.linkedin.com/in/vinicius-m-dias/"
+						href="https://www.linkedin.com/in/vinicius-m-dias/?locale=en_US"
 					>
 						<FaLinkedin />
 					</a>
@@ -100,7 +100,7 @@ export default function Header() {
 					</a>
 					<a
 						title="Go to vinicius dias linkedin"
-						href="https://www.linkedin.com/in/vinicius-m-dias/"
+						href="https://www.linkedin.com/in/vinicius-m-dias/?locale=en_US"
 					>
 						<FaLinkedin />
 					</a>
