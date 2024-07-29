@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import type { Metadata } from "next";
 import StyledComponentsRegistry from './lib/registry'
 import Header from "./components/header";

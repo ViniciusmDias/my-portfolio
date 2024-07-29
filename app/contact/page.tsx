@@ -19,6 +19,8 @@ export default function Contact() {
 				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 				body: new URLSearchParams(formData).toString()
 			});
+
+			console.log(res,'res')
 			if (res.status === 200) {
 				setStatus('ok');
 			} else {
@@ -47,6 +49,7 @@ export default function Contact() {
 				id="form"
 				name="contact"
 				onSubmit={handleFormSubmit}
+				action="?success=true"
 			>
 				<input type="hidden" name="form-name" value="contact" />
 				<S.Row>
