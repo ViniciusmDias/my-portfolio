@@ -62,7 +62,7 @@ export default function Header() {
 						<FaLinkedin />
 					</a>
 				</S.SocialIcons>
-				<S.HamburguerContainer onClick={handleClick} className={`${clickStyle}`}>
+				<S.HamburguerContainer onClick={handleClick} className={`${clickStyle}`} type="button" title="hamburgue-menu">
 					<HamburgerMenu
 						isOpen={hamburguer}
 						width={25}
