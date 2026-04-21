@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "title": "Vinicius Dias — Software Engineer",
+    "description": "Portfolio of Vinicius Dias. Ask the chat anything about my career."
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tabs": { "about": "about.md", "experience": "experience.ts", "chat": "chat.ai" },
+    "greeting": "Hi, I'm Vinicius",
+    "role": "Software Engineer · open to intl. roles",
+    "cta": "Download CV"
+  },
+  "chat": {
+    "placeholder": "Ask me about Vinicius's experience…",
+    "send": "Send",
+    "disabled": "Chat is temporarily disabled.",
+    "rateLimited": "Daily limit reached. Try again tomorrow.",
+    "error": "Something went wrong. Try again."
+  },
+  "intl": {
+    "timezone": "São Paulo · UTC−3",
+    "available": "Open to remote · relocation OK"
+  }
+}

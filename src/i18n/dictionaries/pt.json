@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "title": "Vinicius Dias — Engenheiro de Software",
+    "description": "Portfólio do Vinicius Dias. Pergunte ao chat sobre minha carreira."
+  },
+  "nav": {
+    "home": "Início",
+    "projects": "Projetos",
+    "experience": "Experiência",
+    "contact": "Contato"
+  },
+  "hero": {
+    "tabs": { "about": "about.md", "experience": "experience.ts", "chat": "chat.ai" },
+    "greeting": "Olá, sou Vinicius",
+    "role": "Engenheiro de Software · aberto a vagas intl.",
+    "cta": "Baixar CV"
+  },
+  "chat": {
+    "placeholder": "Pergunte sobre a experiência do Vinicius…",
+    "send": "Enviar",
+    "disabled": "Chat temporariamente desativado.",
+    "rateLimited": "Limite diário atingido. Tente amanhã.",
+    "error": "Algo deu errado. Tente novamente."
+  },
+  "intl": {
+    "timezone": "São Paulo · UTC−3",
+    "available": "Aberto a remoto · mudança OK"
+  }
+}

@@ -1,0 +1,70 @@
+# my-portfolio - Progress Log
+
+## Codebase Patterns
+
+
+## Project Decisions
+
+### 2026-04-20 - Full rewrite v2
+**Decision:** Rewrite portfolio from Next 14 + styled-components to Next 15 + Tailwind v4 + shadcn/ui. Add Claude-powered chat widget using resume markdown as system context.
+**Reason:** Target international recruiters. Current site generic. Creative AI-integrated design differentiates + demonstrates skill. Aligns with global CLAUDE.md stack defaults.
+**Context:** Budget $5/mo Anthropic spend → locked to Haiku 4.5 + prompt caching + strict rate limit. Netlify deploy kept.
+
+### 2026-04-20 - Model selection
+**Decision:** claude-haiku-4-5-20251001 for chat.
+**Reason:** Sonnet 4.6 exceeds budget under expected traffic. Haiku sufficient for resume-scoped QA.
+**Context:** ~$0.003/call with prompt caching → ~1500 chats/mo ceiling at $5.
+
+### 2026-04-20 - Resume source of truth
+**Decision:** Markdown files (resume.en.md, resume.pt.md); PDF generated at build.
+**Reason:** One source, no drift. Easy git diff. Direct consumption by system prompt.
+**Context:** md-to-pdf outputs /public/resume.{locale}.pdf for download.
+
+### 2026-04-20 - Rate limit before public
+**Decision:** Upstash Redis IP-keyed 10 msgs/24h + CHAT_ENABLED kill switch env var.
+**Reason:** $5 budget = single abuser can drain month. Must ship before chat goes public.
+**Context:** Free Upstash tier sufficient.
+
+### 2026-04-21 - Phase 1 branch strategy + wipe-in-place
+**Decision:** Commit v2 scaffold direct to main (option B). Wipe legacy `app/` before scaffold.
+**Reason:** Solo repo per global CLAUDE.md — no PR workflow needed. No need to keep v1 live in parallel.
+**Context:** Legacy Next 14 + styled-components codebase removed. `public/` assets kept (prune later).
+
+### 2026-04-21 - Accent + blog scope
+**Decision:** Green OKLch accent. Blog links externally to Medium (no content migration).
+**Reason:** User preference. Medium posts already hosted; no SEO value in duplicating.
+**Context:** GitHub username for stars fetch: `ViniciusmDias`.
+
+## Iteration Log
+
+## 2026-04-21 - Phase 1 scaffold complete
+
+- Wiped legacy Next 14 app (app/, old configs, axios/styled-components/react-icons/react-hamburger-menu)
+- Scaffolded Next 15.5 + React 19 stable + Tailwind v4 beta + shadcn primitives (Button, Tabs)
+- next-intl v3 with en/pt dictionaries, locale prefix always, middleware, [locale] layout with generateStaticParams
+- Zod-validated env (ANTHROPIC_API_KEY, UPSTASH_*, CHAT_ENABLED kill switch, GITHUB_USERNAME)
+- ESLint v9 flat config + Prettier + tailwindcss plugin + @next/eslint-plugin-next
+- OKLch theme tokens (green primary ~oklch(0.68 0.18 150)), dark/light, next-themes provider
+- Geist Sans + Mono via `geist/font`
+- Folder structure per PRD under src/
+
+**Learnings for future iterations**
+
+- Next 15.5 moved `experimental.typedRoutes` → top-level `typedRoutes`
+- ESLint flat config needs explicit `globals` package — no implicit browser/node env
+- `next build` runs ESLint internally; Next plugin rules must be in flat config via `@next/eslint-plugin-next`
+- Tailwind v4 `@theme` + `@theme inline` split: raw tokens in `@theme`, computed/aliased in `@theme inline`
+- `React.forwardRef` with destructured props triggers prettier line-break rule unless named function passed
+
+## 2026-04-20 - PRD v2 locked
+
+- Wrote prd.json with phases, features, risks
+- Locked stack, budget, locales (en + pt)
+- Created 9 phase tasks
+
+**Learnings for future iterations**
+
+- Anthropic prompt caching cuts ~90% on static resume context
+- Netlify Next 15 streaming works but cold starts = fallback Vercel if lag
+- Prompt injection mitigation belongs in system prompt + output cap, not visitor trust
+

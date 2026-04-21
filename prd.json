@@ -1,0 +1,148 @@
+{
+  "name": "my-portfolio",
+  "version": "2.0.0",
+  "goal": "International-facing portfolio for Vinicius to attract intl recruiters, featuring a Claude-powered chat that answers questions about his career using his resume as context.",
+  "audience": ["International tech recruiters", "Hiring managers", "Fellow engineers"],
+  "locales": ["en", "pt"],
+  "defaultLocale": "en",
+  "budget": {
+    "apiSpendUsdPerMonth": 5,
+    "hardStop": true,
+    "alertAtUsd": 4
+  },
+  "stack": {
+    "framework": "Next.js 15 (App Router, RSC, streaming)",
+    "language": "TypeScript strict",
+    "styling": "Tailwind CSS v4 (@tailwindcss/postcss)",
+    "components": "shadcn/ui (new-york style, Radix)",
+    "icons": "lucide-react",
+    "fonts": "Geist + Geist Mono",
+    "i18n": "next-intl (prefix always)",
+    "motion": "framer-motion",
+    "forms": "react-hook-form + zod",
+    "env": "zod-validated (public + private)",
+    "ai": "@anthropic-ai/sdk + ai (Vercel AI SDK) + @ai-sdk/anthropic",
+    "rateLimit": "@upstash/ratelimit + @upstash/redis (free tier)",
+    "deploy": "Netlify (existing) with @netlify/plugin-nextjs",
+    "lint": "ESLint v9 flat + Prettier",
+    "test": "Vitest + @testing-library/react",
+    "pkg": "yarn"
+  },
+  "dropFromLegacy": [
+    "styled-components",
+    "react-hamburger-menu",
+    "axios (replaced by fetch/ai-sdk)",
+    "react-icons (replaced by lucide-react)"
+  ],
+  "features": [
+    {
+      "id": "F1",
+      "name": "Claude chat widget",
+      "description": "Streaming chat that answers recruiter questions using resume markdown as system context with prompt caching.",
+      "priority": "P0",
+      "acceptanceCriteria": [
+        "POST /api/chat streams tokens (SSE)",
+        "System prompt includes resume.{locale}.md with cache_control ephemeral",
+        "Model: claude-haiku-4-5-20251001",
+        "Max 512 output tokens, max 4-turn history",
+        "Refuses off-topic (non-career) questions",
+        "Responds in the active UI locale",
+        "Rate limit: 10 messages / IP / 24h",
+        "Kill-switch env var CHAT_ENABLED=false disables endpoint",
+        "Zod validates request body"
+      ]
+    },
+    {
+      "id": "F2",
+      "name": "IDE-shell hero",
+      "description": "Landing hero styled as a code editor with tabs (about.md, experience.ts, chat.ai). chat.ai tab is default.",
+      "priority": "P0"
+    },
+    {
+      "id": "F3",
+      "name": "Bento projects grid",
+      "description": "Selected projects with GitHub stars (revalidate 1h), tech chips, live/repo links.",
+      "priority": "P1"
+    },
+    {
+      "id": "F4",
+      "name": "Timeline (git-log style)",
+      "description": "Experience rendered as commits on a timeline. Sourced from resume markdown frontmatter.",
+      "priority": "P1"
+    },
+    {
+      "id": "F5",
+      "name": "International signals",
+      "description": "Sticky header badge: timezone, visa/availability status, CV download, LinkedIn, GitHub.",
+      "priority": "P0"
+    },
+    {
+      "id": "F6",
+      "name": "Resume source + PDF",
+      "description": "Markdown sources of truth (resume.en.md, resume.pt.md). PDF generated at build via md-to-pdf into /public/resume.{locale}.pdf.",
+      "priority": "P0"
+    },
+    {
+      "id": "F7",
+      "name": "Theme toggle",
+      "description": "Dark default, OKLch tokens, light/dark/system.",
+      "priority": "P2"
+    },
+    {
+      "id": "F8",
+      "name": "Contact form",
+      "description": "Netlify form (keep existing integration), spam honeypot, zod validation client-side.",
+      "priority": "P1"
+    }
+  ],
+  "nonFunctional": {
+    "performance": "LCP < 2.0s, TBT < 200ms on 4G",
+    "seo": "Per-locale metadata, OG images, sitemap, robots",
+    "a11y": "WCAG AA, keyboard-operable chat",
+    "security": [
+      "API key server-only",
+      "Rate limit before chat ships",
+      "Prompt-injection mitigation in system prompt",
+      "Zod validation at boundaries"
+    ]
+  },
+  "folderStructure": {
+    "src/app/[locale]/(marketing)/page.tsx": "Hero + chat",
+    "src/app/[locale]/projects/page.tsx": "Bento grid",
+    "src/app/[locale]/experience/page.tsx": "Timeline",
+    "src/app/[locale]/contact/page.tsx": "Netlify form",
+    "src/app/api/chat/route.ts": "Streaming proxy",
+    "src/components/chat/": "ChatPanel, Message, Suggestions, Markdown",
+    "src/components/ui/": "shadcn primitives",
+    "src/components/sections/": "Hero, Bento, Timeline, Header, Footer",
+    "src/content/resume.en.md": "English resume (source of truth)",
+    "src/content/resume.pt.md": "Portuguese resume",
+    "src/config/env.ts": "Zod env validation",
+    "src/lib/anthropic.ts": "Client + system prompt builder",
+    "src/lib/rate-limit.ts": "Upstash rate limiter",
+    "src/i18n/": "next-intl config + dictionaries"
+  },
+  "phases": [
+    { "id": 1, "name": "Scaffold", "tasks": ["Next 15 init", "Tailwind v4", "shadcn init", "next-intl", "ESLint v9 flat", "zod env", "folder structure"] },
+    { "id": 2, "name": "Content", "tasks": ["resume.en.md", "resume.pt.md", "md-to-pdf build step", "bio + projects data"] },
+    { "id": 3, "name": "Shell", "tasks": ["Header with intl badge", "Footer", "IDE hero frame", "Theme toggle"] },
+    { "id": 4, "name": "Sections", "tasks": ["Bento projects (GitHub stars)", "Timeline", "Contact (Netlify form)"] },
+    { "id": 5, "name": "Chat backend", "tasks": ["/api/chat streaming", "Anthropic SDK + caching", "Zod input", "Kill switch"] },
+    { "id": 6, "name": "Rate limit", "tasks": ["Upstash Redis", "IP-keyed 10/day", "Abuse tests"] },
+    { "id": 7, "name": "Chat UI", "tasks": ["Streaming hook", "Suggested prompts", "Markdown render", "Copy button"] },
+    { "id": 8, "name": "Polish", "tasks": ["Framer Motion", "SEO per locale", "OG images", "Sitemap"] },
+    { "id": 9, "name": "Deploy", "tasks": ["Netlify env vars", "Anthropic spend alert", "Smoke test prod"] }
+  ],
+  "risks": [
+    { "risk": "Budget drain from abuse", "mitigation": "Rate limit + kill switch before public" },
+    { "risk": "Netlify function cold starts hurt streaming", "mitigation": "Fallback: migrate to Vercel" },
+    { "risk": "Prompt injection", "mitigation": "Strict system prompt + scope refusal + output length cap" },
+    { "risk": "Resume drift (MD vs PDF)", "mitigation": "PDF generated from MD at build; MD is single source of truth" }
+  ],
+  "openQuestions": [
+    "Keep domain + Netlify site, or fresh deploy?",
+    "Existing blog content — migrate posts or drop entirely?",
+    "GitHub username for stars fetch?",
+    "Preferred accent color for OKLch palette?"
+  ]
+}
