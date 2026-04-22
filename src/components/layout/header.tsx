@@ -14,8 +14,11 @@ export async function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-[color:var(--color-border)] bg-[color:var(--color-background)]/80 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <div className="flex items-center gap-6">
-          <Link href={`/${locale}`} className="font-mono text-sm font-semibold tracking-tight">
+        <div className="flex min-w-0 items-center gap-6">
+          <Link
+            href={`/${locale}`}
+            className="font-mono text-sm font-semibold tracking-tight whitespace-nowrap"
+          >
             vinicius<span className="text-[color:var(--color-primary)]">.dev</span>
           </Link>
           <NavLinks />
@@ -23,7 +26,7 @@ export async function Header() {
 
         <IntlBadge />
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex shrink-0 items-center gap-1.5">
           <Button variant="outline" size="sm" asChild>
             <a
               href={`/resume.${locale}.pdf`}

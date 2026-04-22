@@ -12,9 +12,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      className={`${GeistSans.variable} ${GeistMono.variable} overflow-x-clip`}
     >
-      <body>{children}</body>
+      <body className="overflow-x-clip">{children}</body>
       {clientEnv.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={clientEnv.NEXT_PUBLIC_GA_ID} />}
     </html>
   );

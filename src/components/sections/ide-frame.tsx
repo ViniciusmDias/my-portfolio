@@ -25,7 +25,7 @@ export function IDEFrame({ labels, about, experience, chat, defaultTab = 'chat' 
       </div>
 
       <Tabs defaultValue={defaultTab} className="flex flex-col">
-        <TabsList className="h-10 w-full justify-start gap-0 rounded-none border-b border-[color:var(--color-border)] bg-[color:var(--color-background)] p-0">
+        <TabsList className="h-10 w-full justify-start gap-0 overflow-x-auto rounded-none border-b border-[color:var(--color-border)] bg-[color:var(--color-background)] p-0">
           <TabsTrigger
             value="about"
             className="h-10 gap-2 rounded-none border-r border-[color:var(--color-border)] px-4 data-[state=active]:bg-[color:var(--color-card)] data-[state=active]:shadow-none"
