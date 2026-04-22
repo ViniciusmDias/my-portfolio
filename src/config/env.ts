@@ -13,6 +13,10 @@ const serverSchema = z.object({
 
 const clientSchema = z.object({
   NEXT_PUBLIC_SITE_URL: z.string().url().default('http://localhost:3000'),
+  NEXT_PUBLIC_GA_ID: z
+    .string()
+    .regex(/^G-[A-Z0-9]+$/)
+    .optional(),
 });
 
 const parsedServer = serverSchema.safeParse({
@@ -30,6 +34,7 @@ if (!parsedServer.success) {
 
 const parsedClient = clientSchema.safeParse({
   NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
+  NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
 });
 
 if (!parsedClient.success) {
