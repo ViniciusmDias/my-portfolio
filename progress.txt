@@ -37,6 +37,24 @@
 
 ## Iteration Log
 
+## 2026-04-21 - Phase 3 shell complete
+
+- Header: sticky, backdrop blur, intl badge (live-pulse dot + timezone + availability), CV download (locale-scoped), GitHub, LinkedIn, theme toggle, locale switcher
+- Footer: minimal mono, contact links, build-with credit
+- IDE-shell hero: macOS window chrome (3 dots + breadcrumb), Radix Tabs bar styled as VSCode file tabs, 3 tabs (about.md, experience.ts, chat.ai), chat.ai default
+- AboutPanel: summary + tech chips + location, bilingual content table
+- ExperiencePanel: git-log-style timeline, role @ company + date range + bullet achievements, bilingual data
+- ChatPlaceholder: stub UI (bot greeting bubble + 3 suggestion pills + disabled input/send), comment marks phase-5 backend
+- ThemeToggle: next-themes, cycles system → light → dark, lucide icons, SSR hydration guard
+- LocaleSwitcher: router.replace preserves pathname across locales
+
+**Learnings for future iterations**
+
+- `noUncheckedIndexedAccess` on tuple access (`order[i % order.length]`) returns `| undefined` — always nullish-fallback for setState consumers
+- Prettier line-break rule fires on any ternary assignment that wraps under 100col — keep these on one line
+- Radix Tabs default styling via shadcn fights VSCode tab look; override with `rounded-none border-r` + `data-[state=active]:shadow-none`
+- Phase 3 bumped first-load JS 107kB → 138kB (Radix Tabs + framer unused so far)
+
 ## 2026-04-21 - Phase 2 content complete
 
 - resume.en.md + resume.pt.md written from Resume-Vinicius-Dias-2026-2.pdf (PT translated)
