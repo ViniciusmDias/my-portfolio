@@ -37,6 +37,56 @@
 
 ## Iteration Log
 
+## 2026-04-22 - Phase 7 chat UI complete
+
+- src/hooks/use-chat-stream.ts: `useChatStream({ locale })` — `messages/status/errorMessage/send/stop/reset`. Fetches /api/chat, reads `ReadableStream<Uint8Array>`, decodes TextDecoder, splits on `\n\n`, dispatches `event: token|done|error`, accumulates tokens into assistant message by id. Status machine: idle→streaming→(idle|error|ratelimited). AbortController wired to stop()
+- src/components/chat/message-markdown.tsx: `react-markdown` + `remark-gfm`, styled via Tailwind typography (prose-sm) with code pill overrides, links forced to `target=_blank rel=noopener`
+- src/components/chat/copy-button.tsx: `navigator.clipboard.writeText`, 1.5s `Check` icon + "Copied" label swap
+- src/components/chat/chat-panel.tsx: replaces ChatPlaceholder. Greeting bubble, 3 suggestion pills (locale-scoped, from i18n `chat.suggestions`), assistant bubbles render markdown + copy button, user bubbles plain text, Stop button while streaming, Retry/reset button, rate-limit + error status notes, auto-scroll on new messages
+- Hero: swapped ChatPlaceholder → ChatPanel, `chat-placeholder.tsx` deleted
+- i18n: added `stop/retry/copy/copied/thinking/greeting/suggestions[]` to en.json + pt.json
+- Deps: `react-markdown`, `remark-gfm`, `@testing-library/dom` (peer of @testing-library/react)
+- Tests: 10 passing (IP resolver 4 + route 3 + useChatStream 3 — assembly, 429 ratelimited, error event)
+- Build: `/[locale]` 138kB → 184kB (+46kB from react-markdown unist pipeline)
+
+**Learnings for future iterations**
+
+- SSE parser: split buffer on `\n\n`, parse each block into {event, data}. Critical: use `TextDecoder` with `stream: true` across `reader.read()` chunks — bytes may split mid-multibyte
+- `vi.stubGlobal('fetch', mock)` + unstub in afterEach — simpler than module-level mock for `fetch`
+- @testing-library/react v16 requires peer `@testing-library/dom` — not pulled transitively, install explicitly
+- Vitest env: `/** @vitest-environment jsdom */` directive overrides the config's `node` default per-file (cheaper than globally switching)
+- Next 15 `.next` cache goes stale after SDK upgrades — `rm -rf .next` fixes "Cannot find module './331.js'" on route collection
+- `t.raw('suggestions')` for array values in next-intl — `t()` is scalar-only
+- `useChatStream` closes over `status` → guard against concurrent sends by early-return when `streaming`
+
+## 2026-04-22 - Phase 6 rate limit complete
+
+- src/lib/rate-limit.ts: Upstash Redis + Ratelimit (fixedWindow 10 / 24h, prefix `chat:ip`), lazy singleton — no-op (`null`) when `UPSTASH_REDIS_REST_*` env missing so local dev without Upstash still streams
+- `getClientIp()` header precedence: x-nf-client-connection-ip → cf-connecting-ip → x-real-ip → x-forwarded-for (first entry) → `0.0.0.0`
+- /api/chat: checks limit before stream; 429 response on exceed with `Retry-After`, `X-RateLimit-{Limit,Remaining,Reset}`; success response echoes same headers for client-side countdown
+- vitest.config.ts: node env, @/ alias, includes `src/**/*.test.ts(x)`
+- Tests: 7 passing — getClientIp header precedence (4 cases) + POST /api/chat 429 path + body validation + first-message-must-be-user
+
+**Learnings for future iterations**
+
+- Netlify sets `x-nf-client-connection-ip` (not `cf-connecting-ip`); put it first in IP resolver precedence list
+- `@upstash/ratelimit` singleton pattern: don't construct at module scope, because Next build evaluates it even without env → lazy `getLimiter()` returns `null` when tokens absent
+- Vitest `vi.mock('@/...')` must be declared before the import of the SUT — `import { POST }` placed *after* mocks works due to hoisting but keep imports grouped below mocks for clarity
+- Prettier line-wrap rule triggers at ~100col — single-line `POST(buildReq({...}))` stays under limit, wrapped version fails
+
+## 2026-04-22 - Phase 5 chat backend complete
+
+- src/lib/anthropic.ts: Anthropic client, MODEL=`claude-haiku-4-5-20251001`, MAX_OUTPUT_TOKENS=512, MAX_HISTORY_TURNS=4, `loadResume(locale)` (frontmatter-stripped, in-memory cache), `buildSystemPrompt(locale)` with bilingual scope + refusal + prompt-injection guard
+- src/app/api/chat/route.ts: POST, `runtime=nodejs`, `dynamic=force-dynamic`, zod body `{ locale: en|pt, messages: [{role,user|assistant, content ≤2000ch}] max 16 }`, CHAT_ENABLED kill switch → 503, ANTHROPIC_API_KEY missing → 503, history trimmed to last 4 turns (8 msgs), first message must be `user`, streams via `anthropic.messages.stream` with `system: [{ type:'text', text, cache_control:{type:'ephemeral'} }]`, SSE events `token`/`done`/`error`
+- Bumped `@anthropic-ai/sdk` 0.30 → 0.90 (cache_control in TextBlockParam was beta in v0.30, GA in later majors)
+
+**Learnings for future iterations**
+
+- Anthropic SDK v0.30 placed `cache_control` only under `beta.messages` / `beta.promptCaching.messages` — prompt caching needs SDK >= v0.40 for main-API typing
+- `response.finalMessage()` on streaming gives stop_reason + usage (with `cache_creation_input_tokens` / `cache_read_input_tokens`) for spend observability
+- SSE headers: `X-Accel-Buffering: no` + `Cache-Control: no-cache, no-transform` required on Netlify/CF to disable proxy buffering
+- Iterating `anthropic.messages.stream(...)` yields raw SDK events (`content_block_delta` with `delta.text_delta`) — lower-level but avoids extra abstraction of AI SDK
+
 ## 2026-04-21 - Phase 4 sections complete
 
 - src/lib/github.ts: typed fetch with `next: { revalidate: 3600 }`, graceful null on failure/rate-limit, `getManyRepoStats` for batch
