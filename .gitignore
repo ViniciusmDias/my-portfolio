@@ -39,8 +39,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# generated resume PDFs (produced by prebuild)
-/public/resume.*.pdf
-
 # lockfile conflict (yarn only per global CLAUDE.md)
 package-lock.json
