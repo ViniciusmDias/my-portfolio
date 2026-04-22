@@ -37,6 +37,24 @@
 
 ## Iteration Log
 
+## 2026-04-21 - Phase 4 sections complete
+
+- src/lib/github.ts: typed fetch with `next: { revalidate: 3600 }`, graceful null on failure/rate-limit, `getManyRepoStats` for batch
+- /[locale]/projects: Bento grid (first card spans 2x2 on md+), ProjectCard with tech chips, stars badge, repo/live links, hover border primary
+- /[locale]/experience: reuses ExperiencePanel with page framing
+- /[locale]/contact: react-hook-form + zod (bilingual schemas + messages), Netlify form POST to `/` with honeypot `bot-field`, status states idle|submitting|ok|error
+- public/__forms.html: static detection for Netlify form builder (required since JSX form is dynamic)
+- NavLinks in header (lg+): Home · Projects · Experience · Contact, active state via pathname.startsWith
+- Next.js build output shows revalidate 1h / expire 1y for /projects — ISR working
+
+**Learnings for future iterations**
+
+- Next-intl `<Link>` doesn't accept loose string union for `locale`; cast `locale as 'en' | 'pt'` or lift Locale type
+- Prettier in Tailwind v4 reorders `uppercase` after color (new class order heuristic); keep files formatted
+- Netlify form submission target is `/` (root), not the form page URL; form-name must match `__forms.html`
+- Build-time revalidate declaration (`export const revalidate = 3600`) surfaces "1h / 1y" in Next build table
+- `zodResolver` resolves both locale schemas identically structurally — safe to share `FormValues` type across
+
 ## 2026-04-21 - Phase 3 shell complete
 
 - Header: sticky, backdrop blur, intl badge (live-pulse dot + timezone + availability), CV download (locale-scoped), GitHub, LinkedIn, theme toggle, locale switcher

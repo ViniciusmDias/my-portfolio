@@ -4,6 +4,7 @@ import { Download, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { IntlBadge } from './intl-badge';
 import { LocaleSwitcher } from './locale-switcher';
+import { NavLinks } from './nav-links';
 import { ThemeToggle } from './theme-toggle';
 
 export async function Header() {
@@ -13,9 +14,12 @@ export async function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-[color:var(--color-border)] bg-[color:var(--color-background)]/80 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link href={`/${locale}`} className="font-mono text-sm font-semibold tracking-tight">
-          vinicius<span className="text-[color:var(--color-primary)]">.dev</span>
-        </Link>
+        <div className="flex items-center gap-6">
+          <Link href={`/${locale}`} className="font-mono text-sm font-semibold tracking-tight">
+            vinicius<span className="text-[color:var(--color-primary)]">.dev</span>
+          </Link>
+          <NavLinks />
+        </div>
 
         <IntlBadge />
 
