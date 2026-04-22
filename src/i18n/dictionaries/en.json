@@ -18,9 +18,20 @@
   "chat": {
     "placeholder": "Ask me about Vinicius's experience…",
     "send": "Send",
+    "stop": "Stop",
+    "retry": "Retry",
+    "copy": "Copy",
+    "copied": "Copied",
+    "thinking": "Thinking…",
+    "greeting": "Hi! I'm an assistant trained on Vinicius's resume. Ask about experience, stack, or availability.",
     "disabled": "Chat is temporarily disabled.",
     "rateLimited": "Daily limit reached. Try again tomorrow.",
-    "error": "Something went wrong. Try again."
+    "error": "Something went wrong. Try again.",
+    "suggestions": [
+      "What are his strongest technical skills?",
+      "Tell me about the V4 Company role",
+      "Is he open to relocation?"
+    ]
   },
   "intl": {
     "timezone": "São Paulo · UTC−3",

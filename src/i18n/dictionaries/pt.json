@@ -18,9 +18,20 @@
   "chat": {
     "placeholder": "Pergunte sobre a experiência do Vinicius…",
     "send": "Enviar",
+    "stop": "Parar",
+    "retry": "Repetir",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "thinking": "Pensando…",
+    "greeting": "Olá! Sou um assistente treinado no currículo do Vinicius. Pergunte sobre experiência, stack ou disponibilidade.",
     "disabled": "Chat temporariamente desativado.",
     "rateLimited": "Limite diário atingido. Tente amanhã.",
-    "error": "Algo deu errado. Tente novamente."
+    "error": "Algo deu errado. Tente novamente.",
+    "suggestions": [
+      "Quais são as habilidades técnicas mais fortes dele?",
+      "Fale sobre o trabalho na V4 Company",
+      "Ele está aberto a mudança?"
+    ]
   },
   "intl": {
     "timezone": "São Paulo · UTC−3",

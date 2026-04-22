@@ -1,15 +1,18 @@
 import { getLocale, getTranslations } from 'next-intl/server';
-import { IDEFrame } from './ide-frame';
+
+import { ChatPanel } from '@/components/chat/chat-panel';
+import { isChatAvailable } from '@/lib/anthropic';
+
 import { AboutPanel } from './about-panel';
 import { ExperiencePanel } from './experience-panel';
-import { ChatPlaceholder } from './chat-placeholder';
+import { IDEFrame } from './ide-frame';
 
 export async function Hero() {
   const locale = await getLocale();
   const t = await getTranslations('hero');
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 pt-10 pb-16 sm:px-6 sm:pt-14">
+    <section className="mx-auto w-full max-w-6xl px-4 pt-10 sm:px-6 sm:pt-14">
       <div className="mb-8 space-y-3">
         <span className="font-mono text-xs text-[color:var(--color-muted-foreground)]">
           {'// chat.ai · ask anything about my career'}
@@ -28,7 +31,7 @@ export async function Hero() {
         }}
         about={<AboutPanel locale={locale} />}
         experience={<ExperiencePanel locale={locale} />}
-        chat={<ChatPlaceholder locale={locale} />}
+        chat={<ChatPanel locale={locale as 'en' | 'pt'} enabled={isChatAvailable()} />}
         defaultTab="chat"
       />
     </section>
