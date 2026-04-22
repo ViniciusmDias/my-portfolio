@@ -25,12 +25,22 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
+# env
+.env
 .env*.local
 
 # vercel
 .vercel
 
+# netlify
+.netlify
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated resume PDFs (produced by prebuild)
+/public/resume.*.pdf
+
+# lockfile conflict (yarn only per global CLAUDE.md)
+package-lock.json

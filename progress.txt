@@ -37,6 +37,21 @@
 
 ## Iteration Log
 
+## 2026-04-21 - Phase 2 content complete
+
+- resume.en.md + resume.pt.md written from Resume-Vinicius-Dias-2026-2.pdf (PT translated)
+- Frontmatter carries structured fields (name, role, location, email, phone, github, linkedin, timezone, availability, locale) for downstream chat system prompt + metadata
+- scripts/resume-to-pdf.mjs: md-to-pdf with print CSS (A4, 18mm/16mm margins, blue h2, gray keyword footer)
+- prebuild hook in package.json runs PDF gen → /public/resume.{locale}.pdf
+- PDFs gitignored (deterministic artifact; Netlify regenerates on deploy)
+- src/content/projects.ts: 3 featured repos typed (social-growth-engine, weather-forecast, clepher-qualification-test) — chosen by most recent pushed_at excluding profile README + this portfolio
+
+**Learnings for future iterations**
+
+- md-to-pdf uses Puppeteer; works on Netlify with @netlify/plugin-nextjs but may need `chromium` bundling later if build fails on Lambda
+- Frontmatter strip regex `/^---[\s\S]*?---\n/` — keep content block clean before PDF pass
+- Projects ordered manually now; Phase 4 fetches live stars via GitHub REST, `revalidate: 3600`
+
 ## 2026-04-21 - Phase 1 scaffold complete
 
 - Wiped legacy Next 14 app (app/, old configs, axios/styled-components/react-icons/react-hamburger-menu)
