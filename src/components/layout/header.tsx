@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { Download, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { IntlBadge } from './intl-badge';
 import { LocaleSwitcher } from './locale-switcher';
 import { NavLinks } from './nav-links';
 import { ThemeToggle } from './theme-toggle';
@@ -23,8 +22,6 @@ export async function Header() {
           </Link>
           <NavLinks />
         </div>
-
-        <IntlBadge />
 
         <div className="flex shrink-0 items-center gap-1.5">
           <Button variant="outline" size="sm" asChild>

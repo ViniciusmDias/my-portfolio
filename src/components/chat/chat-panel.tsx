@@ -42,8 +42,11 @@ export function ChatPanel({ locale, enabled }: Props) {
   }
 
   return (
-    <div className="flex min-h-[28rem] flex-col">
-      <div ref={scrollRef} className="flex-1 space-y-4 overflow-x-hidden overflow-y-auto p-6">
+    <div className="flex min-h-[28rem] w-full min-w-0 flex-col">
+      <div
+        ref={scrollRef}
+        className="w-full min-w-0 flex-1 space-y-4 overflow-x-hidden overflow-y-auto p-6"
+      >
         <div className="flex items-start gap-3">
           <Avatar role="assistant" />
           <div className="rounded-lg rounded-tl-none bg-[color:var(--color-muted)] px-4 py-3 text-sm">
@@ -76,7 +79,7 @@ export function ChatPanel({ locale, enabled }: Props) {
           >
             <Avatar role={m.role} />
             <div
-              className={`group max-w-[85%] min-w-0 overflow-hidden rounded-lg px-4 py-3 text-sm break-words ${
+              className={`group max-w-[85%] min-w-0 overflow-hidden rounded-lg px-4 py-3 text-sm [overflow-wrap:anywhere] ${
                 m.role === 'user'
                   ? 'rounded-tr-none bg-[color:var(--color-primary)] text-[color:var(--color-primary-foreground)]'
                   : 'rounded-tl-none bg-[color:var(--color-muted)]'
@@ -112,14 +115,14 @@ export function ChatPanel({ locale, enabled }: Props) {
       </div>
 
       <div className="border-t border-[color:var(--color-border)] p-4">
-        <form className="flex items-center gap-2" onSubmit={handleSubmit}>
+        <form className="flex min-w-0 items-center gap-2" onSubmit={handleSubmit}>
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder={enabled ? t('placeholder') : t('disabled')}
             disabled={inputLocked}
-            className="flex-1 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-background)] px-3 py-2 text-sm outline-none focus:border-[color:var(--color-primary)] disabled:cursor-not-allowed disabled:opacity-60"
+            className="min-w-0 flex-1 rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-background)] px-3 py-2 text-sm outline-none focus:border-[color:var(--color-primary)] disabled:cursor-not-allowed disabled:opacity-60"
           />
           {isStreaming ? (
             <button
