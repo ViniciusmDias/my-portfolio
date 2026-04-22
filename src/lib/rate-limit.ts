@@ -3,7 +3,7 @@ import { Redis } from '@upstash/redis';
 
 import { serverEnv } from '@/config/env';
 
-export const CHAT_LIMIT_COUNT = 10;
+export const CHAT_LIMIT_COUNT = 15;
 export const CHAT_LIMIT_WINDOW = '24 h' as const;
 
 type LimiterResult = {

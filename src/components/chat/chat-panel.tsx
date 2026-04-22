@@ -42,10 +42,10 @@ export function ChatPanel({ locale, enabled }: Props) {
   }
 
   return (
-    <div className="flex min-h-[28rem] w-full min-w-0 flex-col">
+    <div className="flex h-full min-h-0 w-full min-w-0 flex-col">
       <div
         ref={scrollRef}
-        className="w-full min-w-0 flex-1 space-y-4 overflow-x-hidden overflow-y-auto p-6"
+        className="min-h-0 w-full min-w-0 flex-1 space-y-4 overflow-x-hidden overflow-y-auto p-6"
       >
         <div className="flex items-start gap-3">
           <Avatar role="assistant" />

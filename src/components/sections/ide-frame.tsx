@@ -55,7 +55,7 @@ export function IDEFrame({ labels, about, experience, chat, defaultTab = 'chat' 
         <TabsContent value="experience" className="mt-0 min-h-[28rem] p-6 font-mono text-sm">
           {experience}
         </TabsContent>
-        <TabsContent value="chat" className="mt-0 min-h-[28rem] p-0">
+        <TabsContent value="chat" className="mt-0 flex h-[32rem] flex-col p-0">
           {chat}
         </TabsContent>
       </Tabs>
